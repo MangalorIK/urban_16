@@ -4,21 +4,21 @@ app = FastAPI()
 
 
 @app.get("/")
-async def welcome1() -> str:
+async def index() -> str:
     return "Главная страница"
 
 
 @app.get("/user/admin")
-async def welcome2() -> str:
+async def admin() -> str:
     return "Вы вошли как администратор"
 
 
 @app.get("/user/{user_id}")
-async def welcome3(user_id: str) -> str:
+async def user(user_id: str) -> str:
     return f"Вы вошли как пользователь № {user_id}"
 
 
 @app.get("/user")
-async def welcome4(username="Billy", age=35) -> str:
+async def user_info(username="Billy", age=35) -> str:
     return f"Информация о пользователе. Имя: {username}, Возраст: {age}"
 
